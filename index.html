@@ -1,11 +1,751 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Initiate BD | Smart Products for Better Living</title>
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --blue: #2563EB;
+      --orange: #F97316;
+      --white: #FFFFFF;
+      --bg: #FAFAFA;
+      --gray: #64748B;
+      --light-gray: #E5E7EB;
+      --dark-orange: #EA580C;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 90px 0;
+      background: linear-gradient(135deg, #FFFFFF, #EFF6FF);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-orange);
+    }
+
+    .btn-secondary {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: #1D4ED8;
+    }
+
+    .hero-box {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12);
+      text-align: center;
+    }
+
+    .hero-box h2 {
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+    }
+
+    .about {
+      background: var(--white);
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: var(--gray);
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid var(--light-gray);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
+    }
+
+    .card-icon {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    .products {
+      background: #F8FAFC;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--light-gray);
+    }
+
+    .product-img {
+      height: 170px;
+      background: linear-gradient(135deg, #DBEAFE, #FFEDD5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #FFEDD5;
+      color: var(--orange);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .why {
+      background: var(--white);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      text-align: center;
+      background: var(--white);
+      padding: 28px;
+      border-radius: 14px;
+      border: 1px solid var(--light-gray);
+    }
+
+    .step-number {
+      width: 45px;
+      height: 45px;
+      background: var(--orange);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-weight: bold;
+    }
+
+    .reviews {
+      background: #EFF6FF;
+      text-align: center;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 18px;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .faq-answer {
+      padding: 0 18px 18px;
+      color: var(--gray);
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .contact {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .contact .section-title p {
+      color: #CBD5E1;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-box p {
+      margin-bottom: 10px;
+      color: #CBD5E1;
+    }
+
+    footer {
+      background: #020617;
+      color: #CBD5E1;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      padding: 12px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .grid,
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: var(--navy);
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        display: block;
+        margin: 10px auto;
+        width: fit-content;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    New
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">Initiate <span>BD</span></div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#order">How to Order</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div>
+        <h1>Smart Products for <span>Better Everyday Living</span></h1>
+        <p>
+          Initiate BD brings carefully selected, practical, and affordable products
+          to customers across Bangladesh.
+        </p>
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="#contact" class="btn btn-secondary">Message Us</a>
+      </div>
+
+      <div class="hero-box">
+        <h2>Initiate BD</h2>
+        <p>Smart Products • Better Living</p>
+        <br />
+        <p>
+          Quality products, fair pricing, and reliable delivery for everyday needs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Initiate BD</h2>
+        <p>A new journey toward smarter shopping.</p>
+      </div>
+
+      <div class="about-content">
+        <p>
+          Initiate BD is an online brand focused on discovering practical and quality
+          products that make everyday life easier. We carefully select products that
+          offer functionality, affordability, and convenience while building a trustworthy
+          shopping experience for customers across Bangladesh.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-title">
+        <h2>Product Categories</h2>
+        <p>Explore the types of products we plan to bring for you.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">🏡</div>
+          <h3>Home & Lifestyle</h3>
+          <p>Useful products for a better and organized home.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>Mobile Accessories</h3>
+          <p>Smart accessories for phones and daily tech use.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🚗</div>
+          <h3>Car Accessories</h3>
+          <p>Practical items for safer and easier driving.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💡</div>
+          <h3>Smart Gadgets</h3>
+          <p>Small gadgets that solve everyday problems.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🍳</div>
+          <h3>Kitchen Essentials</h3>
+          <p>Simple tools to make cooking and kitchen life easier.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧳</div>
+          <h3>Travel Products</h3>
+          <p>Compact and useful items for travel and movement.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🖥️</div>
+          <h3>Desk & Office</h3>
+          <p>Products for study, work, and productivity.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🏃</div>
+          <h3>Sports & Outdoor</h3>
+          <p>Useful products for active and outdoor lifestyles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section products" id="products">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Products</h2>
+        <p>Our first product collection is coming soon.</p>
+      </div>
+
+      <div class="grid">
+        <div class="product-card">
+          <div class="product-img">🔌</div>
+          <div class="product-info">
+            <h3>Cable Organizer</h3>
+            <p>Keep your desk and cables neat.</p>
+            <span class="tag">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">🚘</div>
+          <div class="product-info">
+            <h3>Car Phone Holder</h3>
+            <p>Hands-free phone placement while driving.</p>
+            <span class="tag">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">🗄️</div>
+          <div class="product-info">
+            <h3>Drawer Organizer</h3>
+            <p>Organize small items easily.</p>
+            <span class="tag">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">💡</div>
+          <div class="product-info">
+            <h3>LED Night Light</h3>
+            <p>Simple lighting solution for home.</p>
+            <span class="tag">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why" id="why">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Us?</h2>
+        <p>We focus on trust, value, and convenience.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Quality First</h3>
+          <p>We aim to offer carefully selected products.</p>
+        </div>
+
+        <div class="card">
+          <h3>Affordable Pricing</h3>
+          <p>Fair prices with practical value for customers.</p>
+        </div>
+
+        <div class="card">
+          <h3>Nationwide Delivery</h3>
+          <p>Delivery service across Bangladesh.</p>
+        </div>
+
+        <div class="card">
+          <h3>Customer Support</h3>
+          <p>Friendly and responsive support through inbox.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="order">
+    <div class="container">
+      <div class="section-title">
+        <h2>How To Order</h2>
+        <p>Simple and easy ordering process.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Browse</h3>
+          <p>Explore our products and categories.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Message Us</h3>
+          <p>Send us a message on Facebook or WhatsApp.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Confirm</h3>
+          <p>Confirm product, quantity, and delivery address.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Receive</h3>
+          <p>Get your product delivered to your location.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews">
+    <div class="container">
+      <div class="section-title">
+        <h2>Customer Reviews</h2>
+        <p>Customer feedback will be added soon after our first orders.</p>
+      </div>
+      <h3>Coming Soon ⭐⭐⭐⭐⭐</h3>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>FAQ</h2>
+        <p>Common questions from our customers.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you deliver all over Bangladesh?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, we plan to deliver products across Bangladesh through reliable courier partners.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          How can I order?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          You can order by messaging us through Facebook, WhatsApp, or our contact form.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          What payment methods are available?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Initially, we may support cash on delivery, bKash, Nagad, and bank transfer depending on product availability.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I return a product?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Return or exchange will depend on product condition and our return policy.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Have questions? Message us anytime.</p>
+      </div>
+
+      <div class="contact-box">
+        <p><strong>Brand:</strong> Initiate BD</p>
+        <p><strong>Email:</strong> initiatebd@gmail.com</p>
+        <p><strong>WhatsApp:</strong> +880 1XXXXXXXXX</p>
+        <p><strong>Facebook:</strong> facebook.com/initiatebd</p>
+        <br />
+        <a href="#" class="btn btn-primary">Message on Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Initiate BD. All rights reserved.</p>
+  </footer>
+
+  <button class="back-top" id="backTop" onclick="scrollToTop()">↑</button>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backTop.style.display = "block";
+      } else {
+        backTop.style.display = "none";
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  </script>
+
 </body>
 </html>
