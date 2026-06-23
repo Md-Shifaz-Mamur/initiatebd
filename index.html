@@ -108,8 +108,6 @@
       cursor: pointer;
     }
 
-    /* HERO */
-
     .hero {
       position: relative;
       overflow: hidden;
@@ -184,6 +182,7 @@
       font-weight: 900;
       cursor: pointer;
       transition: .25s;
+      text-align: center;
     }
 
     .btn:hover {
@@ -210,8 +209,6 @@
       color: white;
     }
 
-    /* Animated map area */
-
     .map-area {
       position: relative;
       height: 500px;
@@ -230,6 +227,9 @@
       mask-image: url("data:image/svg+xml,%3Csvg width='900' height='520' viewBox='0 0 900 520' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M55 118h185v75H55zM255 90h175v105H255zM445 118h125v100H445zM595 95h230v115H595zM120 238h110v130H120zM345 235h145v145H345zM565 235h130v135H565zM715 260h105v95H715zM638 373h75v60H638z'/%3E%3C/svg%3E");
       mask-size: 100% 100%;
       mask-repeat: no-repeat;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='900' height='520' viewBox='0 0 900 520' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M55 118h185v75H55zM255 90h175v105H255zM445 118h125v100H445zM595 95h230v115H595zM120 238h110v130H120zM345 235h145v145H345zM565 235h130v135H565zM715 260h105v95H715zM638 373h75v60H638z'/%3E%3C/svg%3E");
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
     }
 
     .route {
@@ -427,8 +427,6 @@
       font-size: 14px;
     }
 
-    /* Sections */
-
     .section {
       padding: 80px 0;
     }
@@ -624,8 +622,6 @@
       padding: 22px;
     }
 
-    /* Cart */
-
     .cart-overlay {
       position: fixed;
       inset: 0;
@@ -741,8 +737,6 @@
       display: none;
       z-index: 999;
     }
-
-    /* Responsive */
 
     @media(max-width: 1050px) {
       .hero-grid {
@@ -868,7 +862,7 @@
 
       <div class="hero-actions">
         <a href="#products" class="btn btn-primary">Explore Products</a>
-        <a href="https://m.me/initiatebd" target="_blank" class="btn btn-secondary">Order via Facebook Messenger</a>
+        <a href="https://m.me/initiatebd" target="_blank" class="btn btn-secondary">Message on Facebook</a>
       </div>
     </div>
 
@@ -885,15 +879,15 @@
       <div class="dot d4"></div>
       <div class="dot d5"></div>
 
-      <div class="label l1"></div>
-      <div class="label l2"></div>
-      <div class="label l3"></div>
-      <div class="label l4"></div>
+      <div class="label l1">NORTH AMERICA</div>
+      <div class="label l2">EUROPE</div>
+      <div class="label l3">ASIA</div>
+      <div class="label l4">AFRICA</div>
 
       <div class="plane plane1">✈️</div>
       <div class="plane plane2">✈️</div>
       <div class="box">📦</div>
-      <div class="bangladesh">Initiate BD</div>
+      <div class="bangladesh">BANGLADESH</div>
       <div class="delivery-line"></div>
       <div class="home-icon">🏠</div>
     </div>
@@ -939,7 +933,7 @@
   <div class="container">
     <div class="section-title">
       <h2>Featured Products</h2>
-      <p>Add products to cart and place order through WhatsApp.</p>
+      <p>Add products to cart and place order through WhatsApp or Facebook Messenger.</p>
     </div>
 
     <div class="grid">
@@ -962,7 +956,7 @@
       <div class="step"><div class="step-number">1</div><h3>Browse</h3><p>Explore products.</p></div>
       <div class="step"><div class="step-number">2</div><h3>Add to Cart</h3><p>Select items.</p></div>
       <div class="step"><div class="step-number">3</div><h3>Checkout</h3><p>Fill your details.</p></div>
-      <div class="step"><div class="step-number">4</div><h3>Confirm</h3><p>Order via WhatsApp.</p></div>
+      <div class="step"><div class="step-number">4</div><h3>Confirm</h3><p>Order via WhatsApp or Messenger.</p></div>
     </div>
   </div>
 </section>
@@ -986,7 +980,7 @@
 
     <div class="faq-wrap">
       <div class="faq-item"><div class="faq-question">Do you deliver all over Bangladesh? <span>+</span></div><div class="faq-answer">Yes, we plan to deliver products across Bangladesh through reliable courier partners.</div></div>
-      <div class="faq-item"><div class="faq-question">How can I order? <span>+</span></div><div class="faq-answer">Add products to cart, fill the checkout form, and send order via WhatsApp.</div></div>
+      <div class="faq-item"><div class="faq-question">How can I order? <span>+</span></div><div class="faq-answer">Add products to cart, fill the checkout form, and send order via WhatsApp or Messenger.</div></div>
       <div class="faq-item"><div class="faq-question">What payment methods are available? <span>+</span></div><div class="faq-answer">Initially Cash on Delivery, bKash, Nagad, and bank transfer may be supported.</div></div>
     </div>
   </div>
@@ -1005,7 +999,7 @@
       <p><strong>Facebook:</strong> <a href="https://www.facebook.com/initiatebd" target="_blank">facebook.com/initiatebd</a></p>
 
       <div class="contact-actions">
-        <a href="https://www.facebook.com/initiatebd" target="_blank" class="btn btn-primary">Message on Facebook</a>
+        <a href="https://m.me/initiatebd" target="_blank" class="btn btn-primary">Message on Facebook</a>
         <a href="https://wa.me/8801970571010" target="_blank" class="btn btn-secondary">Message on WhatsApp</a>
       </div>
     </div>
@@ -1051,7 +1045,7 @@
     <textarea id="orderNote" rows="2" placeholder="Any note?"></textarea>
 
     <button class="btn btn-green" style="width:100%;margin-bottom:10px" onclick="orderWhatsApp()">Order via WhatsApp</button>
-    <a href="https://m.me/initiatebd" target="_blank" class="btn btn-secondary" style="width:100%">Order via Facebook Messenger</a>
+    <button class="btn btn-secondary" style="width:100%" onclick="orderFacebook()">Order via Facebook Messenger</button>
   </div>
 </aside>
 
@@ -1131,11 +1125,15 @@
     cartCount.textContent = count;
   }
 
-  function orderWhatsApp(){
-    if(cart.length === 0){
-      alert("Your cart is empty.");
-      return;
-    }
+  function getOrderMessagePlain(){
+    let total = 0;
+    let items = "";
+
+    cart.forEach((item, i) => {
+      const subtotal = item.price * item.qty;
+      total += subtotal;
+      items += `${i+1}. ${item.name} x ${item.qty} = ৳${subtotal}\n`;
+    });
 
     const name = document.getElementById("customerName").value.trim();
     const phone = document.getElementById("customerPhone").value.trim();
@@ -1143,30 +1141,71 @@
     const payment = document.getElementById("paymentMethod").value;
     const note = document.getElementById("orderNote").value.trim();
 
-    if(!name || !phone || !address){
-      alert("Please fill name, phone, and address.");
-      return;
+    return `Hello Initiate BD,
+
+I want to place an order.
+
+Name: ${name}
+Phone: ${phone}
+Address: ${address}
+Payment: ${payment}
+
+Items:
+${items}
+Total: ৳${total}
+
+Note: ${note || "N/A"}`;
+  }
+
+  function validateOrder(){
+    if(cart.length === 0){
+      alert("Your cart is empty.");
+      return false;
     }
 
-    let total = 0;
-    let items = "";
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const address = document.getElementById("customerAddress").value.trim();
 
-    cart.forEach((item, i) => {
-      const subtotal = item.price * item.qty;
-      total += subtotal;
-      items += `${i+1}. ${item.name} x ${item.qty} = ৳${subtotal}%0A`;
-    });
+    if(!name || !phone || !address){
+      alert("Please fill name, phone, and address.");
+      return false;
+    }
 
-    const message =
-      `Hello Initiate BD,%0A%0AI want to place an order.%0A%0A` +
-      `Name: ${encodeURIComponent(name)}%0A` +
-      `Phone: ${encodeURIComponent(phone)}%0A` +
-      `Address: ${encodeURIComponent(address)}%0A` +
-      `Payment: ${encodeURIComponent(payment)}%0A%0A` +
-      `Items:%0A${items}%0ATotal: ৳${total}%0A` +
-      `Note: ${encodeURIComponent(note || "N/A")}`;
+    return true;
+  }
 
+  function orderWhatsApp(){
+    if(!validateOrder()) return;
+
+    const message = encodeURIComponent(getOrderMessagePlain());
     window.open(`https://wa.me/8801970571010?text=${message}`, "_blank");
+  }
+
+  function orderFacebook(){
+    if(!validateOrder()) return;
+
+    const message = getOrderMessagePlain();
+
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(message).then(() => {
+        alert("Order details copied. Messenger will open now. Please paste and send the message.");
+        window.open("https://m.me/initiatebd", "_blank");
+      }).catch(() => {
+        alert("Messenger will open now. Please copy your order details from the cart and send manually.");
+        window.open("https://m.me/initiatebd", "_blank");
+      });
+    } else {
+      const tempTextArea = document.createElement("textarea");
+      tempTextArea.value = message;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempTextArea);
+
+      alert("Order details copied. Messenger will open now. Please paste and send the message.");
+      window.open("https://m.me/initiatebd", "_blank");
+    }
   }
 
   renderCart();
